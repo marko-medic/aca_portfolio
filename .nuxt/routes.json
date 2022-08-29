@@ -1,0 +1,23 @@
+[
+  {
+    "name": "archive",
+    "path": "/archive",
+    "component": "D:\\\\Users\\\\PC\\\\Desktop\\\\aca\\\\pages\\\\archive.vue",
+    "chunkName": "pages/archive",
+    "_name": "_c5bca570"
+  },
+  {
+    "name": "indexx",
+    "path": "/indexx",
+    "component": "D:\\\\Users\\\\PC\\\\Desktop\\\\aca\\\\pages\\\\indexx.vue",
+    "chunkName": "pages/indexx",
+    "_name": "_4158e0d0"
+  },
+  {
+    "name": "index",
+    "path": "/",
+    "component": "D:\\\\Users\\\\PC\\\\Desktop\\\\aca\\\\pages\\\\index.vue",
+    "chunkName": "pages/index",
+    "_name": "_230350d8"
+  }
+]
