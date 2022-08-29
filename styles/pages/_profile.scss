@@ -957,7 +957,6 @@
           }
 
           @include media(">tablet") {
-            text-align: center;
             @include variableFonts(40, 120);
           }
 
@@ -969,13 +968,9 @@
         .c-bottom {
           @include media(">tablet") {
             max-width: 670px;
-            margin: 0 auto;
             @include flex(space-between);
           }
 
-          @include media(">1200px") {
-            transform: translateX(-20px);
-          }
 
           .bottom {
             &__left {
@@ -1037,6 +1032,8 @@
       }
 
       &__right {
+        // if we remove right footer or set display:none, site gets weird behavior
+        visibility: hidden;
         max-width: 340px;
         margin: 0 auto;
 

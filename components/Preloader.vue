@@ -28,16 +28,6 @@
             </span>
           </h1>
         </div>
-
-        <div class="preloader-images">
-          <div class="image-con con-1">
-            <div class="image-1 image" />
-          </div>
-
-          <div class="image-con con-2">
-            <div class="image-2 image" />
-          </div>
-        </div>
       </div>
       <h2 class="c-preloader__footer">
         ALEXANDER <br />
@@ -72,7 +62,7 @@ export default {
         "https://res.cloudinary.com/dmwfd0zhh/image/upload/q_auto,f_auto/v1621540680/Korty/image_43_u9fsmz.jpg",
         "https://res.cloudinary.com/dmwfd0zhh/image/upload/q_auto,f_auto/v1621541975/Korty/korty-pamane_glwvwh.jpg",
         "https://res.cloudinary.com/dmwfd0zhh/image/upload/q_auto,f_auto/v1621542856/Korty/153576857_480678352950294_7236937184248464472_n_3_ktb05h.jpg",
-        "https://res.cloudinary.com/dmwfd0zhh/image/upload/q_auto,f_auto/v1621568117/Korty/Rectangle_23_dxgpdz.jpg"
+        "https://res.cloudinary.com/dmwfd0zhh/image/upload/q_auto,f_auto/v1621568117/Korty/Rectangle_23_dxgpdz.jpg",
       ],
       otherstoPreload: [
         "https://res.cloudinary.com/dmwfd0zhh/image/upload/q_auto,f_auto/v1621637709/Korty/korty-archive-1_kjvsf4.jpg",
@@ -105,11 +95,11 @@ export default {
         "https://res.cloudinary.com/dmwfd0zhh/image/upload/q_auto,f_auto/v1621921782/Korty/Rectangle_60_bwxjnj.jpg",
         "https://res.cloudinary.com/dmwfd0zhh/image/upload/q_auto,f_auto/v1621921812/Korty/Rectangle_61_hgeq0v.jpg",
         "https://res.cloudinary.com/dmwfd0zhh/image/upload/q_auto,f_auto/v1621921816/Korty/Rectangle_62_zkkzof.jpg",
-        "https://res.cloudinary.com/dmwfd0zhh/image/upload/q_auto,f_auto/v1621921814/Korty/Rectangle_64_v1mfrj.jpg"
+        "https://res.cloudinary.com/dmwfd0zhh/image/upload/q_auto,f_auto/v1621921814/Korty/Rectangle_64_v1mfrj.jpg",
       ],
       percentageLoaded: 0,
       isLoaded: false,
-      numbersArr: []
+      numbersArr: [],
     };
   },
   mounted() {
@@ -128,7 +118,7 @@ export default {
       const totalImages = this.toBePreloaded.length;
       let loadedCount = 0;
 
-      const min3Digits = num => {
+      const min3Digits = (num) => {
         if (num < 10) {
           return `00${num}`;
         } else if (num < 99) {
@@ -159,74 +149,33 @@ export default {
               const tl = gsap.timeline({
                 onComplete: () => {
                   this.$store.commit("updateImagesLoaded", true);
-                }
+                },
               });
               tl.to(".fake-zero", {
                 yPercent: -100,
-                duration: 1
-              })
-                .to(
-                  ".p-inner",
-                  {
-                    duration: 1,
-                    yPercent: -(loadedCount * 100)
-                  },
-                  "-=1"
-                )
-                .set(".preloader-images .con-2", { autoAlpha: 1 });
-              tl.from(".preloader-images .con-2", {
-                duration: 1.5,
-                yPercent: 100,
-                ease: "Expo.easeInOut"
-              })
-                .from(".preloader-images .image-2", {
-                  duration: 1.5,
-                  yPercent: -100,
-                  delay: -1.5,
-                  ease: "Expo.easeInOut"
-                })
-                .set(".preloader-images .con-1", { autoAlpha: 1 })
-                .set(".percentages__container", { opacity: 0 })
-                .to(".preloader-images .con-2", {
-                  duration: 1.5,
-                  yPercent: -100,
-                  ease: "Expo.easeInOut"
-                })
-                .to(".preloader-images .image-2", {
-                  duration: 1.5,
-                  yPercent: 100,
-                  delay: -1.5,
-                  ease: "Expo.easeInOut"
-                })
-                .to(".preloader-images .con-1", {
-                  duration: 1.5,
-                  yPercent: -100,
-                  ease: "Expo.easeInOut"
-                })
-                .to(".preloader-images .image-1", {
-                  duration: 1.5,
-                  yPercent: 100,
-                  delay: -1.5,
-                  ease: "Expo.easeInOut"
-                })
-                .to(".c-preloader__footer", {
-                  opacity: 0,
-                  delay: -1
-                });
-            }
+                duration: 1,
+              }).to(
+                ".p-inner",
+                {
+                  duration: 1,
+                  yPercent: -(loadedCount * 100),
+                },
+                "-=1"
+              );
+            },
           });
         })
       );
     },
     async preloadOthers() {
-      this.otherstoPreload.map(async image => {
+      this.otherstoPreload.map(async (image) => {
         await preloadImage(image);
       });
     },
     closeLoader() {
       this.$store.commit("updateImagesLoaded", true);
-    }
-  }
+    },
+  },
 };
 </script>
 

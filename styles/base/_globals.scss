@@ -1,3 +1,8 @@
+html, body {
+  font-family: "FoundersGrotesk", "Source Sans Pro", -apple-system, BlinkMacSystemFont,
+  "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -6,8 +11,6 @@ body {
   font-weight: 400;
   // color: $col-black;
   color: #efefef;
-  font-family: "Grotesk", "Source Sans Pro", -apple-system, BlinkMacSystemFont,
-    "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   // cursor: none;
 }
@@ -108,7 +111,7 @@ p {
 }
 
 .fraunces {
-  font-family: $fontSerif;
+  font-family: $main-font;
 }
 
 .show-mobile {
