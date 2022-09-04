@@ -2,22 +2,22 @@
   {
     "name": "archive",
     "path": "/archive",
-    "component": "D:\\\\Users\\\\PC\\\\Desktop\\\\aca\\\\pages\\\\archive.vue",
+    "component": "D:\\\\Users\\\\PC\\\\Desktop\\\\Projects\\\\aca\\\\pages\\\\archive.vue",
     "chunkName": "pages/archive",
-    "_name": "_c5bca570"
+    "_name": "_51a112ae"
   },
   {
     "name": "indexx",
     "path": "/indexx",
-    "component": "D:\\\\Users\\\\PC\\\\Desktop\\\\aca\\\\pages\\\\indexx.vue",
+    "component": "D:\\\\Users\\\\PC\\\\Desktop\\\\Projects\\\\aca\\\\pages\\\\indexx.vue",
     "chunkName": "pages/indexx",
-    "_name": "_4158e0d0"
+    "_name": "_ab7792ac"
   },
   {
     "name": "index",
     "path": "/",
-    "component": "D:\\\\Users\\\\PC\\\\Desktop\\\\aca\\\\pages\\\\index.vue",
+    "component": "D:\\\\Users\\\\PC\\\\Desktop\\\\Projects\\\\aca\\\\pages\\\\index.vue",
     "chunkName": "pages/index",
-    "_name": "_230350d8"
+    "_name": "_9a6e5084"
   }
 ]

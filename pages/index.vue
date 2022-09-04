@@ -57,15 +57,12 @@
 
         <div class="c-profile__headline">
           <h2 class="headline__text">
-            <span
+            <!-- <span
               >Alexander <span class="fraunces">Light</span> Stojanović</span
-            >
-            <span
-              >Alexander <span class="fraunces">Light</span> Stojanović</span
-            >
-            <span
-              >Alexander <span class="fraunces">Light</span> Stojanović</span
-            >
+            > -->
+            <span>Alexander Stojanović</span>
+            <span>Alexander Stojanović</span>
+            <span>Alexander Stojanović</span>
           </h2>
         </div>
         <div class="c-profile__intro">
@@ -478,7 +475,9 @@
               </div>
             </div>
             <div class="footer__center">
-              <h1>Reach <span class="fraunces">out!</span></h1>
+              <!-- <h1>Reach <span class="fraunces">out!</span></h1> -->
+              <h1>REACH OUT</span></h1>
+
               <div class="c-bottom">
                 <div class="bottom__left">
                   <p class="c-desc">

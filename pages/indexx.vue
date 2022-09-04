@@ -25,16 +25,16 @@ export default {
     appear: true,
     beforeEnter(el) {
       gsap.set(el, {
-        opacity: 0
+        opacity: 0,
       });
     },
     enter(el, done) {
       const tl = gsap.timeline({
-        onComplete: done
+        onComplete: done,
       });
       tl.to(el, {
         opacity: 1,
-        duration: 1.3
+        duration: 1.3,
       })
         .from(
           ".span-overflow .ov-inner",
@@ -43,8 +43,8 @@ export default {
             duration: 1,
             ease: "power2.out",
             stagger: {
-              amount: 0.08
-            }
+              amount: 0.08,
+            },
           },
           "-=.7"
         )
@@ -55,8 +55,8 @@ export default {
             duration: 1,
             ease: "power2.out",
             stagger: {
-              amount: 0.08
-            }
+              amount: 0.08,
+            },
           },
           "-=.8"
         )
@@ -66,7 +66,7 @@ export default {
             duration: 1.5,
             opacity: 0,
             scale: 1.5,
-            ease: "power2.out"
+            ease: "power2.out",
           },
           "-=1.5"
         )
@@ -76,7 +76,7 @@ export default {
             duration: 1.5,
             opacity: 0,
             scale: 1.5,
-            ease: "power2.out"
+            ease: "power2.out",
           },
           "-=1.5"
         )
@@ -86,7 +86,7 @@ export default {
             duration: 1.5,
             opacity: 0,
             scale: 1.5,
-            ease: "power2.out"
+            ease: "power2.out",
           },
           "-=1.5"
         );
@@ -95,25 +95,25 @@ export default {
       gsap.set(".c-exit", {
         zIndex: 30,
         top: "unset",
-        bottom: 0
+        bottom: 0,
       });
       gsap.set(".exit-span", {
-        opacity: 1
+        opacity: 1,
       });
     },
     leave(el, done) {
       const tl = gsap.timeline({
-        onComplete: done
+        onComplete: done,
       });
 
       tl.to(".c-exit", {
         height: window.innerHeight,
         duration: 1.5,
-        ease: "Expo.easeInOut"
+        ease: "Expo.easeInOut",
       })
         .set(".c-exit", {
           top: 0,
-          bottom: "unset"
+          bottom: "unset",
         })
         .from(
           ".exit-span",
@@ -122,30 +122,30 @@ export default {
             duration: 1,
             skewY: 10,
             stagger: {
-              amount: 0.1
+              amount: 0.1,
             },
-            ease: "power2.out"
+            ease: "power2.out",
           },
           "-=.5"
         )
         .set(el, {
-          opacity: 0
+          opacity: 0,
         })
         .to(".exit-span", {
           opacity: 0,
           duration: 1,
-          ease: "power2.out"
+          ease: "power2.out",
         })
         .to(
           ".c-exit",
           {
             height: 0,
             duration: 1.5,
-            ease: "Expo.easeInOut"
+            ease: "Expo.easeInOut",
           },
           "-=1"
         );
-    }
+    },
   },
 
   mounted() {
@@ -157,17 +157,17 @@ export default {
     beginCursor() {
       const cursorRef = this.$refs.cursor;
       const cursor = new Cursor(cursorRef);
-      [...document.querySelectorAll("a")].forEach(link => {
+      [...document.querySelectorAll("a")].forEach((link) => {
         link.addEventListener("mouseenter", () => cursor.enter());
         link.addEventListener("mouseleave", () => cursor.leave());
       });
 
-      [...document.querySelectorAll("button")].forEach(link => {
+      [...document.querySelectorAll("button")].forEach((link) => {
         link.addEventListener("mouseenter", () => cursor.enter());
         link.addEventListener("mouseleave", () => cursor.leave());
       });
-    }
-  }
+    },
+  },
 };
 </script>
 
