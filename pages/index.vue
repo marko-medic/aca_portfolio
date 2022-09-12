@@ -186,7 +186,7 @@
               </div>
             </div>
             <div class="work__companies">
-              <div class="nike-gt">
+              <!-- <div class="nike-gt">
                 <div class="nike">
                   <div class="nike__left">
                     <h2>NIKE</h2>
@@ -229,9 +229,9 @@
                     </div>
                   </div>
                 </div>
-              </div>
+              </div> -->
 
-              <div class="empawa">
+              <!-- <div class="empawa">
                 <div class="empawa__image">
                   <img
                     src="https://res.cloudinary.com/dmwfd0zhh/image/upload/q_auto,f_auto/v1621443387/Korty/Rectangle_22_zkazsw.jpg"
@@ -247,7 +247,7 @@
                   <animated-arrow href="https://kortyeo.com/partner/empawa" />
                 </div>
                 <h1>EMPAWA</h1>
-              </div>
+              </div> -->
 
               <div class="zikoko-ga">
                 <div class="googlearts">
@@ -279,7 +279,7 @@
                   </div>
                 </div>
 
-                <div class="coachella">
+                <!-- <div class="coachella">
                   <div class="coachella__label">
                     <div class="coachella__disclaimer">
                       <span>*</span>
@@ -303,10 +303,10 @@
                       href="https://kortyeo.com/partner/coachella"
                     />
                   </div>
-                </div>
-              </div>
+                </div> -->
+              </div> <!-- END FOR ZIKOKO-->
 
-              <div class="bbnaija">
+              <!-- <div class="bbnaija">
                 <div class="bbnaija__top">
                   <div class="image-1">
                     <img
@@ -326,8 +326,8 @@
                   </div>
                 </div>
                 <h2>BBNAIJA</h2>
-              </div>
-              <div class="keexs">
+              </div> -->
+              <!-- <div class="keexs">
                 <img
                   src="https://res.cloudinary.com/dmwfd0zhh/image/upload/q_auto,f_auto/v1621540680/Korty/image_43_u9fsmz.jpg"
                   alt=""
@@ -342,8 +342,8 @@
                   </p>
                   <animated-arrow href="https://kortyeo.com/partner/keeks" />
                 </div>
-              </div>
-              <div class="pamane">
+              </div> -->
+              <!-- <div class="pamane">
                 <div class="pamane__left">
                   <img
                     src="https://res.cloudinary.com/dmwfd0zhh/image/upload/q_auto,f_auto/v1621541975/Korty/korty-pamane_glwvwh.jpg"
@@ -371,9 +371,9 @@
                     PAMANE
                   </h1>
                 </div>
-              </div>
-            </div>
-            <div class="work__quote">
+              </div> -->
+            </div> <!-- END FOR WORK COMPANIES-->
+            <!-- <div class="work__quote">
               <div>
                 <div class="desc">
                   <animated-arrow
@@ -396,7 +396,7 @@
                 </div>
                 <h1><span class="fraunces">Learning</span> BY DOING</h1>
               </div>
-            </div>
+            </div> -->
           </div>
 
           <div class="c-profile__work--mobile show-tablet">
@@ -430,7 +430,7 @@
               <a href="/" target="__blank">PAMANE</a>
             </div>
 
-            <div class="work__quote">
+            <!-- <div class="work__quote">
               <img
                 src="https://res.cloudinary.com/dmwfd0zhh/image/upload/q_auto,f_auto/v1621568117/Korty/Rectangle_23_dxgpdz.jpg"
                 alt=""
@@ -444,7 +444,7 @@
                 Now, Korty is basically freelancing - making videos for her
                 youtube channnel, instagram and clients.
               </p>
-            </div>
+            </div> -->
           </div>
         </div>
 
@@ -653,7 +653,7 @@ export default {
     this.initScrolltrigger();
     this.marqueeAnimation();
     this.heroImageAnimation();
-    this.worksAnimation(worksRef);
+    // this.worksAnimation(worksRef); // napraviti custom logiku za scroll
     this.googleArtsAnimation();
 
     this.$nuxt.$emit("update-locomotive");
@@ -750,129 +750,130 @@ export default {
         // ease: "none"
       });
     },
-    worksAnimation(container) {
-      let isScrollForward = true;
-      const proxy = { skew: 0, bounce: 1 },
-        skewSetter = gsap.quickSetter(".skew-image", "skewX", "deg"),
-        // scaleSetter = gsap.quickSetter(".scaleEl", "scaleY"),
-        clamp = gsap.utils.clamp(-30, 30);
-      // scaleClamp = gsap.utils.clamp(0.95, 1.1);
-      const timeline = gsap.timeline();
-      const coachellaDesc = document.querySelector(".coachella__desc");
-      const ctaButton = document.querySelector(".cta-button");
-      const workSection = document.querySelector(".work__companies");
+    // worksAnimation(container) {
+    //   let isScrollForward = true;
+    //   const proxy = { skew: 0, bounce: 1 },
+    //     skewSetter = gsap.quickSetter(".skew-image", "skewX", "deg"),
+    //     // scaleSetter = gsap.quickSetter(".scaleEl", "scaleY"),
+    //     clamp = gsap.utils.clamp(-30, 30);
+    //   // scaleClamp = gsap.utils.clamp(0.95, 1.1);
+    //   const timeline = gsap.timeline();
+    //   const coachellaDesc = document.querySelector(".coachella__desc");
+    //   const ctaButton = document.querySelector(".cta-button");
+    //   const workSection = document.querySelector(".work__companies");
 
-      const anim = gsap.to(container, {
-        x: () => {
-          return -(container.scrollWidth - innerWidth);
-        },
-        ease: "none",
-        overwrite: "auto",
-        scrollTrigger: {
-          trigger: container,
-          invalidateOnRefresh: true,
-          scroller: this.$refs.scroller.locomotive.el,
-          pin: true,
-          scrub: 1,
+    //   const anim = gsap.to(container, {
+    //     x: () => {
+    //       return -(container.scrollWidth - innerWidth);
+    //     },
+    //     ease: "none",
+    //     overwrite: "auto",
+    //     scrollTrigger: {
+    //       trigger: container,
+    //       invalidateOnRefresh: true,
+    //       scroller: this.$refs.scroller.locomotive.el,
+    //       pin: true,
+    //       scrub: 1,
 
-          end: () => "+=" + (container.offsetWidth + innerWidth),
+    //       end: () => "+=" + (container.offsetWidth + innerWidth),
 
-          onUpdate(self) {
-            let skew = clamp(self.getVelocity() / -230);
+    //       onUpdate(self) {
+    //         console.log('@test');
+    //         let skew = clamp(self.getVelocity() / -230);
 
-            const direction = self.direction;
-            const snapDifference =
-              self.progress * self.end - (self.end - window.innerWidth);
+    //         const direction = self.direction;
+    //         const snapDifference =
+    //           self.progress * self.end - (self.end - window.innerWidth);
 
-            if (isScrollForward) {
-              if (snapDifference > window.innerWidth * 0.5) {
-                window.innerWidth > 768 && self.scroll(self.end);
-                isScrollForward = false;
-              }
-            }
+    //         if (isScrollForward) {
+    //           if (snapDifference > window.innerWidth * 0.5) {
+    //             window.innerWidth > 768 && self.scroll(self.end);
+    //             isScrollForward = false;
+    //           }
+    //         }
 
-            if (
-              direction === -1 &&
-              snapDifference > window.innerWidth * 0.6 &&
-              snapDifference < window.innerWidth * 0.9
-            ) {
-              const snapProgress =
-                window.innerWidth / (container.scrollWidth - window.innerWidth);
-              const differenceEndStart = self.end - self.start;
-              const snapDeduction = snapProgress * differenceEndStart;
+    //         if (
+    //           direction === -1 &&
+    //           snapDifference > window.innerWidth * 0.6 &&
+    //           snapDifference < window.innerWidth * 0.9
+    //         ) {
+    //           const snapProgress =
+    //             window.innerWidth / (container.scrollWidth - window.innerWidth);
+    //           const differenceEndStart = self.end - self.start;
+    //           const snapDeduction = snapProgress * differenceEndStart;
 
-              window.innerWidth > 768 &&
-                self.scroll(self.end - (snapDeduction + 2));
+    //           window.innerWidth > 768 &&
+    //             self.scroll(self.end - (snapDeduction + 2));
 
-              setTimeout(() => {
-                isScrollForward = true;
-              }, 1000);
-            }
+    //           setTimeout(() => {
+    //             isScrollForward = true;
+    //           }, 1000);
+    //         }
 
-            if (Math.abs(skew) > Math.abs(proxy.skew)) {
-              proxy.skew = skew;
-              // proxy.bounce = bounce;
-              gsap.to(proxy, {
-                skew: 0,
-                duration: 0.7,
-                ease: "power3",
-                overwrite: true,
-                onUpdate: () => {
-                  skewSetter(proxy.skew);
-                  // scaleSetter(proxy.bounce);
-                },
-              });
-            }
-          },
-          // markers: true
-        },
-      });
+    //         if (Math.abs(skew) > Math.abs(proxy.skew)) {
+    //           proxy.skew = skew;
+    //           // proxy.bounce = bounce;
+    //           gsap.to(proxy, {
+    //             skew: 0,
+    //             duration: 0.7,
+    //             ease: "power3",
+    //             overwrite: true,
+    //             onUpdate: () => {
+    //               skewSetter(proxy.skew);
+    //               // scaleSetter(proxy.bounce);
+    //             },
+    //           });
+    //         }
+    //       },
+    //       // markers: true
+    //     },
+    //   });
 
-      // Get the scrolltrigger instance on the scroll animation
-      const self = anim.scrollTrigger;
-      ctaButton.addEventListener("click", () => {
-        const snapProgress =
-          window.innerWidth / (container.scrollWidth - window.innerWidth);
-        const differenceEndStart = self.end - self.start;
-        const snapDeduction = snapProgress * differenceEndStart;
+    //   // Get the scrolltrigger instance on the scroll animation
+    //   const self = anim.scrollTrigger;
+    //   ctaButton.addEventListener("click", () => {
+    //     const snapProgress =
+    //       window.innerWidth / (container.scrollWidth - window.innerWidth);
+    //     const differenceEndStart = self.end - self.start;
+    //     const snapDeduction = snapProgress * differenceEndStart;
 
-        self.scroll(self.start + snapDeduction + 50);
-      });
+    //     self.scroll(self.start + snapDeduction + 50);
+    //   });
 
-      // Rotate the coachella circle as it enters/exits the viewport
-      timeline.to(coachellaDesc, {
-        rotate: "2deg",
-        overwrite: "auto",
-        scrollTrigger: {
-          scrub: 1,
-          // markers: true,
-          invalidateOnRefresh: true,
-          scroller: this.$refs.scroller.locomotive.el,
-          start: () =>
-            container.scrollWidth -
-            coachellaDesc.parentNode.offsetLeft -
-            coachellaDesc.parentNode.getBoundingClientRect().width -
-            coachellaDesc.getBoundingClientRect().width +
-            20,
-          end: () =>
-            coachellaDesc.parentNode.offsetLeft -
-            coachellaDesc.parentNode.getBoundingClientRect().width,
-        },
-      });
+    //   // Rotate the coachella circle as it enters/exits the viewport
+    //   timeline.to(coachellaDesc, {
+    //     rotate: "2deg",
+    //     overwrite: "auto",
+    //     scrollTrigger: {
+    //       scrub: 1,
+    //       // markers: true,
+    //       invalidateOnRefresh: true,
+    //       scroller: this.$refs.scroller.locomotive.el,
+    //       start: () =>
+    //         container.scrollWidth -
+    //         coachellaDesc.parentNode.offsetLeft -
+    //         coachellaDesc.parentNode.getBoundingClientRect().width -
+    //         coachellaDesc.getBoundingClientRect().width +
+    //         20,
+    //       end: () =>
+    //         coachellaDesc.parentNode.offsetLeft -
+    //         coachellaDesc.parentNode.getBoundingClientRect().width,
+    //     },
+    //   });
 
-      // force 3D for performance
-      gsap.set(".skew-image", {
-        transformOrigin: "right center",
-        force3D: true,
-      });
+    //   // force 3D for performance
+    //   gsap.set(".skew-image", {
+    //     transformOrigin: "right center",
+    //     force3D: true,
+    //   });
 
-      // Update locomotive on resize
-      ScrollTrigger.addEventListener("refresh", () => {
-        this.$nuxt.$emit("update-locomotive");
-      });
+    //   // Update locomotive on resize
+    //   ScrollTrigger.addEventListener("refresh", () => {
+    //     this.$nuxt.$emit("update-locomotive");
+    //   });
 
-      ScrollTrigger.refresh();
-    },
+    //   ScrollTrigger.refresh();
+    // },
   },
 };
 </script>
